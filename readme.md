@@ -4,6 +4,7 @@
 ![image](https://github.com/tonihintikka/PythonGPT_Vision_webapp_generator/assets/6028261/04712481-96ba-490c-8b04-35bb0beed039)
 
 ### source image
+"kind of wireframe"
 ![image](https://github.com/tonihintikka/PythonGPT_Vision_webapp_generator/assets/6028261/ed3774d8-982a-4858-bb9a-06cf926c21e8)
 
 ### end result
