@@ -124,59 +124,6 @@ def send_image(image_path, follow_up=False):
         print("Response:", response_data)
 
 
-"""
-# Path to your image
-image_path = "image.jpg"
-
-# Getting the base64 string
-base64_image = encode_image(image_path)
-
-headers = {
-    "Content-Type": "application/json",
-    "Authorization": f"Bearer {api_key}"
-}
-
-payload = {
-    "model": "gpt-4-vision-preview",
-    "max_tokens": 4096,
-    "messages": [
-        {
-            "role": "system",
-            "content": prompts.OPEN_AI_SYSTEM_PROMPT  # System prompt
-        },
-        {
-            "role": "user",
-            "content": [
-                {
-                    "type": "image_url",
-                    "image_url": {
-                        "url": f"data:image/jpeg;base64,{base64_image}",
-                        "detail": "high"
-                    }
-                },
-                {
-                    "type": "text",
-                    "text": prompts.OPENAI_USER_PROMPT  # User prompt
-                },
-                # Additional text messages can be added here as needed
-            ]
-        }
-    ]
-}
-
-
-
-
-
-
-
-#response = requests.post(
-#    "https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-
-#print(response.json())
-"""
-
-
 def file_has_changed(filepath, last_modified_time):
     return os.path.getmtime(filepath) > last_modified_time
 
