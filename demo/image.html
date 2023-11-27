@@ -1,0 +1,133 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  .calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+  }
+  .output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 2em;
+    padding: 20px;
+  }
+  .button {
+    cursor: pointer;
+    font-size: 1.5em;
+    border: 1px solid #ffffff;
+    outline: none;
+    background: rgba(255, 255, 255, 0.75);
+  }
+  .button:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .span-two {
+    grid-column: span 2;
+  }
+</style>
+</head>
+<body>
+<div class="calculator-grid">
+  <div class="output" id="display">0</div>
+  <button class="button" onclick="clearDisplay()">AC</button>
+  <button class="button" onclick="deleteDigit()">DEL</button>
+  <button class="button" onclick="appendNumber('1')">1</button>
+  <button class="button" onclick="appendNumber('2')">2</button>
+  <button class="button" onclick="appendNumber('3')">3</button>
+  <button class="button" onclick="chooseOperation('+')">+</button>
+  <button class="button" onclick="appendNumber('4')">4</button>
+  <button class="button" onclick="appendNumber('5')">5</button>
+  <button class="button" onclick="appendNumber('6')">6</button>
+  <button class="button" onclick="chooseOperation('-')">-</button>
+  <button class="button" onclick="appendNumber('7')">7</button>
+  <button class="button" onclick="appendNumber('8')">8</button>
+  <button class="button" onclick="appendNumber('9')">9</button>
+  <button class="button" onclick="chooseOperation('*')">×</button>
+  <button class="button span-two" onclick="appendNumber('0')">0</button>
+  <button class="button" onclick="appendNumber('.')">.</button>
+  <button class="button" onclick="chooseOperation('/')">÷</button>
+  <button class="button" onclick="compute()">=</button>
+</div>
+
+<script>
+  let currentOperand = '';
+  let previousOperand = '';
+  let operation = null;
+
+  function clearDisplay() {
+    currentOperand = '';
+    previousOperand = '';
+    operation = null;
+    updateDisplay();
+  }
+
+  function deleteDigit() {
+    currentOperand = currentOperand.toString().slice(0, -1);
+    updateDisplay();
+  }
+
+  function appendNumber(number) {
+    if (number === '.' && currentOperand.includes('.')) return;
+    currentOperand = currentOperand.toString() + number.toString();
+    updateDisplay();
+  }
+
+  function chooseOperation(selectedOperation) {
+    if (currentOperand === '') return;
+    if (previousOperand !== '') {
+      compute();
+    }
+    operation = selectedOperation;
+    previousOperand = currentOperand;
+    currentOperand = '';
+    updateDisplay();
+  }
+
+  function compute() {
+    let computation;
+    const prev = parseFloat(previousOperand);
+    const current = parseFloat(currentOperand);
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (operation) {
+      case '+':
+        computation = prev + current;
+        break;
+      case '-':
+        computation = prev - current;
+        break;
+      case '*':
+        computation = prev * current;
+        break;
+      case '/':
+        computation = prev / current;
+        break;
+      default:
+        return;
+    }
+    currentOperand = computation;
+    operation = null;
+    previousOperand = '';
+    updateDisplay();
+  }
+
+  function updateDisplay() {
+    document.getElementById('display').innerText = currentOperand;
+  }
+</script>
+</body>
+</html>
+```
