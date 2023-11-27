@@ -15,7 +15,7 @@
 https://github.com/tonihintikka/PythonGPT_Vision_webapp_generator/blob/main/demo/image.html
 
 
-This project integrates OpenAI's GPT-4 Vision API to generate HTML/JavaScript code from images and descriptions.
+This project integrates OpenAI's GPT-4 Vision API to generate HTML/JavaScript code from images and descriptions. You need to have offcourse access to OpenAI API to get this work.
 
 ## Installation
 
