@@ -1,4 +1,4 @@
-# OpenAI Vision API Project
+# Python OpenAI Vision API Webapp generator
 
 ## Demo
 ![image](https://github.com/tonihintikka/PythonGPT_Vision_webapp_generator/assets/6028261/04712481-96ba-490c-8b04-35bb0beed039)
