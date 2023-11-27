@@ -9,7 +9,8 @@
 
 ### end result
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BLkM-TRjPzs?si=2PsakkBdqME60sYM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![demo for the created application]((https://github.com/tonihintikka/PythonGPT_Vision_webapp_generator/assets/6028261/3c1237a0-fb85-4cd8-bfef-fc7106416da1)
+)](https://youtu.be/BLkM-TRjPzs)
 
 ## link to html file
 https://github.com/tonihintikka/PythonGPT_Vision_webapp_generator/blob/main/demo/image.html
