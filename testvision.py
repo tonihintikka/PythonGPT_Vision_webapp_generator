@@ -100,6 +100,12 @@ def send_image(image_path, follow_up=False):
         # Extract the HTML content from the response
         html_content = response_data['choices'][0]['message']['content']
 
+        # Remove specific characters from the start and end
+        if html_content.startswith("```html"):
+            html_content = html_content[len("```html"):]
+        if html_content.endswith("```"):
+            html_content = html_content[:-len("```")]
+
         # Ensure the /data directory exists
         data_directory = os.path.join(os.path.dirname(__file__), 'data')
         os.makedirs(data_directory, exist_ok=True)
